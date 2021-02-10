@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import TextScreen from './screens/TextScreen';
@@ -10,6 +10,7 @@ import ListScreen from './screens/ListScreen';
 import ButtonsDemo from './screens/ButtonsDemo';
 import SwitchScreen from './screens/SwitchScreen';
 import TextInputScreen from './screens/TextInputScreen';
+import ImageDemo from './screens/ImageDemo'
 
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ function App() {
         <Stack.Screen name="ColorButton" component={ButtonsDemo} />
         <Stack.Screen name="SwitchDemo" component={SwitchScreen} />
         <Stack.Screen name="TextInputDemo" component={TextInputScreen} />
+        <Stack.Screen name="ImageDemo" component={ImageDemo}/>
       </Stack.Navigator>                     
     </NavigationContainer>
     </SafeAreaProvider>
