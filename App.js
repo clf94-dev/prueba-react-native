@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import TextScreen from './screens/TextScreen';
+import ListScreen from './screens/ListScreen';
+import ButtonsDemo from './screens/ButtonsDemo';
+import SwitchScreen from './screens/SwitchScreen';
+import TextInputScreen from './screens/TextInputScreen';
+
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Text" component={TextScreen} />
+        <Stack.Screen name="List" component={ListScreen} />
+        <Stack.Screen name="ColorButton" component={ButtonsDemo} />
+        <Stack.Screen name="SwitchDemo" component={SwitchScreen} />
+        <Stack.Screen name="TextInputDemo" component={TextInputScreen} />
+      </Stack.Navigator>                     
+    </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
